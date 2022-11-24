@@ -66,13 +66,7 @@ struct ContentView: View {
 
     func onScroll(_ offset: CGFloat) {
         os_log("Offset: %.2f", offset)
-
-        if offset >= 0 && lastOffset < 0 {
-            os_log("Baseline: ↗️")
-        }
-        if offset < 0 && lastOffset >= 0 {
-            os_log("Baseline: ↘️")
-        }
+        os_log("Direction: %@", offset > lastOffset ? "↘️": "↗️")
 
         lastOffset = offset
     }
