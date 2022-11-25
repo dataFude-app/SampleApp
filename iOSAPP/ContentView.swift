@@ -11,6 +11,8 @@ struct ContentView: View {
         }
     }
 
+    @State private var lastDirection = ""
+
     var body: some View {
         VStack {
             ScrollView {
@@ -66,7 +68,12 @@ struct ContentView: View {
 
     func onScroll(_ offset: CGFloat) {
         os_log("Offset: %.2f", offset)
-        os_log("Direction: %@", offset > lastOffset ? "↘️": "↗️")
+
+        let direction = offset > lastOffset ? "↘️": "↗️"
+        if direction != lastDirection {
+            os_log("Direction: %@", direction)
+            lastDirection = direction
+        }
 
         lastOffset = offset
     }
