@@ -45,7 +45,7 @@
             ActionType = "Xcode.IDEStandardExecutionActionsCore.ExecutionActionType.ShellScriptAction">
             <ActionContent
                title = "Run Script"
-               scriptText = "# Pass the executable name as parameter:&#10;open /Applications/Tile.app --args &quot;iOSAPP&quot;&#10;">
+               scriptText = "open tile://new/iOSAPP&#10;">
             </ActionContent>
          </ExecutionAction>
       </PreActions>

@@ -3,11 +3,16 @@ import os
 
 struct ContentView: View {
     @State private var offset = CGFloat.zero
-    @State private var lastOffset = 0.0
+
+    @State private var lastOffset = 0.0 {
+        didSet {
+            
+        }
+    }
 
     @State private var selection = Set<String>() {
         didSet {
-            print("Selected: \(selection.joined(separator: ","))")
+
         }
     }
 
@@ -67,11 +72,9 @@ struct ContentView: View {
     }
 
     func onScroll(_ offset: CGFloat) {
-        os_log("Offset: %.2f", offset)
-
         let direction = offset > lastOffset ? "↘️": "↗️"
         if direction != lastDirection {
-            os_log("Direction: %@", direction)
+            //os_log("Direction: %@", direction)
             lastDirection = direction
         }
 
