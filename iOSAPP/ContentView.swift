@@ -6,7 +6,7 @@
   - the current scroll direction
 
  Run the project & as you're use the app dataTile will open tiles automatically like so:
- https://github.com/dataTile-app/SampleApp/blob/main/etc/dataTile-window.png
+ https://raw.githubusercontent.com/dataTile-app/SampleApp/main/etc/composite.png
  */
 
 import SwiftUI
