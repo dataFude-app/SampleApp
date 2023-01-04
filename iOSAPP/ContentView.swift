@@ -1,3 +1,14 @@
+/*
+ This list logs multiple pieces of state the showcase dataTile for Simulator:
+
+  - the scroll offset
+  - selection status and selected items
+  - the current scroll direction
+
+ Run the project & as you're use the app dataTile will open tiles automatically like so:
+ https://github.com/dataTile-app/SampleApp/blob/main/etc/dataTile-window.png
+ */
+
 import SwiftUI
 import os
 
@@ -6,13 +17,14 @@ struct ContentView: View {
 
     @State private var lastOffset = 0.0 {
         didSet {
-            
+            os_log("Offset: %.f", lastOffset)
         }
     }
 
     @State private var selection = Set<String>() {
         didSet {
-
+            os_log("Selected: \(!selection.isEmpty)")
+            os_log("Selection: \(selection.joined(separator: ","))")
         }
     }
 
@@ -74,7 +86,7 @@ struct ContentView: View {
     func onScroll(_ offset: CGFloat) {
         let direction = offset > lastOffset ? "↘️": "↗️"
         if direction != lastDirection {
-            //os_log("Direction: %@", direction)
+            os_log("Direction: %@", direction)
             lastDirection = direction
         }
 
