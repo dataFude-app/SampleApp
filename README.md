@@ -7,3 +7,4 @@ A simple SwiftUI project that uses `os_log` to log some of the view state to the
 
 > Note: The pre-run phase launches dataTile automatically so you should be able to just build and run without needing to do anything else (given you have dataTile installed).
 
+If you don't have dataTile for Simulator installed you can get the free version from the Mac App Store: https://underplot.com/dataTile
